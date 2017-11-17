@@ -35,7 +35,6 @@ int main()
 	cout << msg << endl;
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
-	//test();
 
 	system("pause");
 	return 0;
