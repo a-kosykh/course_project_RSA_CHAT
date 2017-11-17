@@ -5,7 +5,6 @@ void get_open_key(unsigned int& e, unsigned int& n);
 void get_private_key(unsigned int& d);
 void encryption(std::string& message);
 void decoding(std::string& message);
-//void test();
 void get_stable_value(int& value);
 void get_real_value(long long& value, unsigned int index);
 const unsigned int p = 3; //1867;
