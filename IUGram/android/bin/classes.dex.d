@@ -1,0 +1,26 @@
+C:\CourseProject\IUGram\android\bin\classes.dex : \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\example\IUGram\BuildConfig.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\example\IUGram\R$array.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\example\IUGram\R$attr.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\example\IUGram\R$drawable.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\example\IUGram\R$layout.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\example\IUGram\R$string.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\example\IUGram\R.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\ministro\IMinistro$Stub$Proxy.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\ministro\IMinistro$Stub.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\ministro\IMinistro.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\ministro\IMinistroCallback$Stub$Proxy.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\ministro\IMinistroCallback$Stub.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\ministro\IMinistroCallback.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtActivity$1.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtActivity$2.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtActivity$3$1$1.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtActivity$3$1.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtActivity$3.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtActivity$4.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtActivity$5.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtActivity$6.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtActivity.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtApplication$InvokeResult.class \
+C:\CourseProject\IUGram\android\bin\classes\org\kde\necessitas\origo\QtApplication.class \
+C:\CourseProject\IUGram\android\bin\dexedLibs\annotations-da87c62b63aa1e04932e2ed4a75a7a32.jar \
