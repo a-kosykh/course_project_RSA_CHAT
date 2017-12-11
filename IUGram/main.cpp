@@ -10,9 +10,9 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForTr(cyrillicCodec);
     QTextCodec::setCodecForLocale(cyrillicCodec);
     QTextCodec::setCodecForCStrings(cyrillicCodec);
-    IUGram firstwindow;
     // Первое окно с регистрацией/входом
     QApplication a(argc, argv);
+    IUGram firstwindow;
     QBrush br(Qt::TexturePattern);
     // Кладем фото в background (допилить так, чтобы фото можно было предварительно не загружать на телефон)
     br.setTextureImage(QImage("/storage/emulated/0/DCIM/Camera/firstwindow.png"));

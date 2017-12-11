@@ -11,11 +11,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        iugram.cpp
+        iugram.cpp \
+    secondwindow.cpp \
+    settings.cpp
 
-HEADERS  += iugram.h
+HEADERS  += iugram.h \
+    secondwindow.h \
+    settings.h
 
-FORMS    += iugram.ui
+FORMS    += iugram.ui \
+    secondwindow.ui \
+    settings.ui
 
 CONFIG += mobility
 MOBILITY = 
@@ -61,4 +67,10 @@ OTHER_FILES += \
     android/src/org/kde/necessitas/origo/QtActivity.java \
     android/src/org/kde/necessitas/origo/QtApplication.java \
     android/version.xml
+
+
+
+
+
+
 
