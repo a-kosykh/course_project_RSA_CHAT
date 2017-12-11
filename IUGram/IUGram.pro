@@ -68,6 +68,9 @@ OTHER_FILES += \
     android/src/org/kde/necessitas/origo/QtApplication.java \
     android/version.xml
 
+RESOURCES += \
+    res.qrc
+
 
 
 

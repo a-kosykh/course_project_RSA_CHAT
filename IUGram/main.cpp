@@ -23,6 +23,15 @@ int main(int argc, char *argv[])
 #if defined(Q_WS_S60)
     firstwindow.showMaximized();
 #else
+    // example of adding background image in Qt 5.10.1 (can't check in older versions)
+    // 1. project --> add file --> Qt Resources
+    // 2. add any prefix
+    // 3. click add file and choose file in source directory
+    // 4. now you can access to file with prefix
+    // 5. file will be also compiled into APK after build
+
+    // firstwindow.setStyleSheet("background-image:url(:/resources/images/back.png)");
+
     firstwindow.show();
 #endif
 
