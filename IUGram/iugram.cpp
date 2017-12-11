@@ -19,19 +19,19 @@ IUGram::~IUGram()
     delete ui;
 }
 
-// Кнопка войти
+// РљРЅРѕРїРєР° РІРѕР№С‚Рё
 void IUGram::on_pushButton_clicked()
 {
-    // Получение списка зарегестрированных юзеров (необходимо допилить)
+    // РџРѕР»СѓС‡РµРЅРёРµ СЃРїРёСЃРєР° Р·Р°СЂРµРіРµСЃС‚СЂРёСЂРѕРІР°РЅРЅС‹С… СЋР·РµСЂРѕРІ (РЅРµРѕР±С…РѕРґРёРјРѕ РґРѕРїРёР»РёС‚СЊ)
     list_of_users.push_back("Alex");
     list_of_users.push_back("Sasha");
 
-    // Считывание username-а
+    // РЎС‡РёС‚С‹РІР°РЅРёРµ username-Р°
     new_user = ui->lineEdit->text();
-    // Если username уже зарегистрирован
+    // Р•СЃР»Рё username СѓР¶Рµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ
     if (qFind(list_of_users.begin(), list_of_users.end(), new_user) != list_of_users.end())
     {
-        // Создание второго окна со списком сообщений
+        // РЎРѕР·РґР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ РѕРєРЅР° СЃРѕ СЃРїРёСЃРєРѕРј СЃРѕРѕР±С‰РµРЅРёР№
         SecondWindow * secwnd = new SecondWindow(this);
         QBrush br(Qt::TexturePattern);
         br.setTextureImage(QImage("/storage/emulated/0/DCIM/Camera/secondwindow.png"));
@@ -43,18 +43,18 @@ void IUGram::on_pushButton_clicked()
     }
     else
     {
-        // Сообение о том, что вход не удался, нужно зарегестрироваться
-        QString temp = "Пользователя ";
+        // РЎРѕРѕР±РµРЅРёРµ Рѕ С‚РѕРј, С‡С‚Рѕ РІС…РѕРґ РЅРµ СѓРґР°Р»СЃСЏ, РЅСѓР¶РЅРѕ Р·Р°СЂРµРіРµСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ
+        QString temp = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЏ ";
         temp += new_user;
-        temp += " не существует! Пожалуйста, зарегистрируйтесь.";
-        QMessageBox::information(this, "Неудачная попытка входа", temp);
+        temp += " РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚! РџРѕР¶Р°Р»СѓР№СЃС‚Р°, Р·Р°СЂРµРіРёСЃС‚СЂРёСЂСѓР№С‚РµСЃСЊ.";
+        QMessageBox::information(this, "РќРµСѓРґР°С‡РЅР°СЏ РїРѕРїС‹С‚РєР° РІС…РѕРґР°", temp);
     }
 }
 
-// Кнопка зарегистрироваться
+// РљРЅРѕРїРєР° Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ
 void IUGram::on_pushButton_2_clicked()
 {
-    // Получение списка зарегестрированных юзеров (необходимо допилить)
+    // РџРѕР»СѓС‡РµРЅРёРµ СЃРїРёСЃРєР° Р·Р°СЂРµРіРµСЃС‚СЂРёСЂРѕРІР°РЅРЅС‹С… СЋР·РµСЂРѕРІ (РЅРµРѕР±С…РѕРґРёРјРѕ РґРѕРїРёР»РёС‚СЊ)
     list_of_users.push_back("Alex");
     list_of_users.push_back("Sasha");
 
@@ -62,17 +62,17 @@ void IUGram::on_pushButton_2_clicked()
 
     if (qFind(list_of_users.begin(), list_of_users.end(), new_user) != list_of_users.end())
     {
-        // Сообение о том, что регистрация не удался, так как пользователь с таким username-ом уже существует
-        QString temp = "Пользователь с username: ";
+        // РЎРѕРѕР±РµРЅРёРµ Рѕ С‚РѕРј, С‡С‚Рѕ СЂРµРіРёСЃС‚СЂР°С†РёСЏ РЅРµ СѓРґР°Р»СЃСЏ, С‚Р°Рє РєР°Рє РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СЃ С‚Р°РєРёРј username-РѕРј СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚
+        QString temp = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ СЃ username: ";
         temp += new_user;
-        temp += " уже существует! Пожалуйста, придумайте другое имя.";
-        QMessageBox::information(this, "Неудачная попытка регистрации", temp);
+        temp += " СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚! РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РїСЂРёРґСѓРјР°Р№С‚Рµ РґСЂСѓРіРѕРµ РёРјСЏ.";
+        QMessageBox::information(this, "РќРµСѓРґР°С‡РЅР°СЏ РїРѕРїС‹С‚РєР° СЂРµРіРёСЃС‚СЂР°С†РёРё", temp);
         return;
     }
 
-    // Добавляем новогоюзера
+    // Р”РѕР±Р°РІР»СЏРµРј РЅРѕРІРѕРіРѕСЋР·РµСЂР°
     list_of_users.push_back(new_user);
-    // Создание второго окна со списком сообщений
+    // РЎРѕР·РґР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ РѕРєРЅР° СЃРѕ СЃРїРёСЃРєРѕРј СЃРѕРѕР±С‰РµРЅРёР№
     SecondWindow * secwnd = new SecondWindow(this);
     QBrush br(Qt::TexturePattern);
     br.setTextureImage(QImage("/storage/emulated/0/DCIM/Camera/secondwindow.png"));
@@ -83,7 +83,7 @@ void IUGram::on_pushButton_2_clicked()
     secwnd->show();
 }
 
-// Кнопка настройки - шестеренка
+// РљРЅРѕРїРєР° РЅР°СЃС‚СЂРѕР№РєРё - С€РµСЃС‚РµСЂРµРЅРєР°
 void IUGram::on_pushButton_3_clicked()
 {
     Settings * settingswindow = new Settings(this);
