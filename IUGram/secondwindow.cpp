@@ -14,7 +14,7 @@ SecondWindow::~SecondWindow()
     delete ui;
 }
 
-// Кнопка IUGram на втором экране, которая ведет на страницу входа
+// РљРЅРѕРїРєР° IUGram РЅР° РІС‚РѕСЂРѕРј СЌРєСЂР°РЅРµ, РєРѕС‚РѕСЂР°СЏ РІРµРґРµС‚ РЅР° СЃС‚СЂР°РЅРёС†Сѓ РІС…РѕРґР°
 void SecondWindow::on_pushButton_2_clicked()
 {
     IUGram * firstwindow_ = new IUGram(this);
@@ -27,7 +27,7 @@ void SecondWindow::on_pushButton_2_clicked()
     firstwindow_->show();
 }
 
-// Кнопка найти - лупа
+// РљРЅРѕРїРєР° РЅР°Р№С‚Рё - Р»СѓРїР°
 void SecondWindow::on_pushButton_clicked()
 {
 
