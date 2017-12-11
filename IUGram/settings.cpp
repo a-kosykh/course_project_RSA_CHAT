@@ -14,7 +14,7 @@ Settings::~Settings()
     delete ui;
 }
 
-// Êíîïêà íàçàä - âûõîä íà ãëàâíóþ èç íàñòðîåê
+// ÐšÐ½Ð¾Ð¿ÐºÐ° Ð½Ð°Ð·Ð°Ð´ - Ð²Ñ‹Ñ…Ð¾Ð´ Ð½Ð° Ð³Ð»Ð°Ð²Ð½ÑƒÑŽ Ð¸Ð· Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐº
 void Settings::on_pushButton_2_clicked()
 {
     IUGram * firstwindow_ = new IUGram(this);
@@ -27,7 +27,7 @@ void Settings::on_pushButton_2_clicked()
     firstwindow_->show();
 }
 
-// Êíîêà ñîõðàíèòü - ñîõðàíÿåò ââåäåííûå õîñò è ïîðò
+// ÐšÐ½Ð¾ÐºÐ° ÑÐ¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ - ÑÐ¾Ñ…Ñ€Ð°Ð½ÑÐµÑ‚ Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ñ‹Ðµ Ñ…Ð¾ÑÑ‚ Ð¸ Ð¿Ð¾Ñ€Ñ‚
 void Settings::on_pushButton_clicked()
 {
     ip_addres = ui->lineEdit->text();
