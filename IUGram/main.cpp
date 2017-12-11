@@ -5,16 +5,16 @@
 
 int main(int argc, char *argv[])
 {
-    // Смена кодировки для чтения не только латинских, но и русских букв
+    // РЎРјРµРЅР° РєРѕРґРёСЂРѕРІРєРё РґР»СЏ С‡С‚РµРЅРёСЏ РЅРµ С‚РѕР»СЊРєРѕ Р»Р°С‚РёРЅСЃРєРёС…, РЅРѕ Рё СЂСѓСЃСЃРєРёС… Р±СѓРєРІ
     QTextCodec *cyrillicCodec = QTextCodec::codecForName("Windows-1251");
     QTextCodec::setCodecForTr(cyrillicCodec);
     QTextCodec::setCodecForLocale(cyrillicCodec);
     QTextCodec::setCodecForCStrings(cyrillicCodec);
-    // Первое окно с регистрацией/входом
+    // РџРµСЂРІРѕРµ РѕРєРЅРѕ СЃ СЂРµРіРёСЃС‚СЂР°С†РёРµР№/РІС…РѕРґРѕРј
     QApplication a(argc, argv);
     IUGram firstwindow;
     QBrush br(Qt::TexturePattern);
-    // Кладем фото в background (допилить так, чтобы фото можно было предварительно не загружать на телефон)
+    // РљР»Р°РґРµРј С„РѕС‚Рѕ РІ background (РґРѕРїРёР»РёС‚СЊ С‚Р°Рє, С‡С‚РѕР±С‹ С„РѕС‚Рѕ РјРѕР¶РЅРѕ Р±С‹Р»Рѕ РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕ РЅРµ Р·Р°РіСЂСѓР¶Р°С‚СЊ РЅР° С‚РµР»РµС„РѕРЅ)
     br.setTextureImage(QImage("/storage/emulated/0/DCIM/Camera/firstwindow.png"));
     QPalette plt = firstwindow.palette();
     plt.setBrush(QPalette::Background, br);
