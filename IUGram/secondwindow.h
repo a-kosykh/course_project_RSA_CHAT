@@ -4,7 +4,7 @@
 #include <QMainWindow>
 
 namespace Ui {
-    class SecondWindow;
+class SecondWindow;
 }
 
 class SecondWindow : public QMainWindow
@@ -16,9 +16,9 @@ public:
     ~SecondWindow();
 
 private slots:
-    void on_pushButton_2_clicked();
-
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::SecondWindow *ui;

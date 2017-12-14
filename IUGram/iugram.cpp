@@ -1,17 +1,16 @@
 #include "iugram.h"
 #include "ui_iugram.h"
-#include "secondwindow.h"
 #include "settings.h"
+#include "secondwindow.h"
 
-QString new_user;
+QString new_user_pass;
+QString new_user_log;
 
 IUGram::IUGram(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::IUGram)
 {
     ui->setupUi(this);
-    ui->pushButton->setStyleSheet("*{background-color: rgb(141, 252, 175); border: rgb(141, 252, 175);}");
-    ui->pushButton_2->setStyleSheet("*{background-color: rgb(141, 252, 175); border: rgb(141, 252, 175);}");
 }
 
 IUGram::~IUGram()
@@ -19,79 +18,122 @@ IUGram::~IUGram()
     delete ui;
 }
 
-// Кнопка войти
+// Кнопка настройки - шестеренка
 void IUGram::on_pushButton_clicked()
 {
-    // Получение списка зарегестрированных юзеров (необходимо допилить)
-    list_of_users.push_back("Alex");
-    list_of_users.push_back("Sasha");
+    Settings * settings_window = new Settings(this);
+    this->close();
+    settings_window->show();
+}
 
-    // Считывание username-а
-    new_user = ui->lineEdit->text();
-    // Если username уже зарегистрирован
-    if (qFind(list_of_users.begin(), list_of_users.end(), new_user) != list_of_users.end())
+// Кнопка войти
+void IUGram::on_pushButton_2_clicked()
+{
+    // Получение списка зерегистрированных пользователей (TODO: get() запросы)
+//    manager = new QNetworkAccessManager();  // Инициализация менеджера
+//    QUrl url("http://www...");              // Инициализация URL, с которого будут получаться данные
+//    QNetworkRequest request;                // Отправляемый запрос
+//    request.setUrl(url);                    // Устанавлвиваем URL в запрос
+//    manager->get(request);                  // Выполняем запрос
+//    QNetworkReply *reply;
+//    QString temp_list_of_users;
+//    temp_list_of_users.push_back(reply->readAll());
+    QVector<QPair<QString, QString>> local_users;
+    local_users.push_back(QPair<QString, QString>("S228H1488", "Sasha"));
+    local_users.push_back(QPair<QString, QString>("AK777", "AKosoj"));
+    for (auto it : local_users)
+    {
+        list_of_users.push_back(qMakePair(it.first,it.second));
+    }
+
+    // Считывание пароля нового user-а
+    new_user_pass = ui->lineEdit->text();
+    // Считывание логина нового user-а
+    new_user_log = ui->lineEdit_2->text();
+
+    // Если логин и пароль уже зарегистрированы для данного пользователя
+    if (qFind(list_of_users.begin(), list_of_users.end(), QPair<QString, QString>(new_user_pass, new_user_log)) != list_of_users.end())
     {
         // Создание второго окна со списком сообщений
-        SecondWindow * secwnd = new SecondWindow(this);
-        QBrush br(Qt::TexturePattern);
-        br.setTextureImage(QImage("/storage/emulated/0/DCIM/Camera/secondwindow.png"));
-        QPalette plt = secwnd->palette();
-        plt.setBrush(QPalette::Background, br);
-        secwnd->setPalette(plt);
+        SecondWindow * second_window = new SecondWindow(this);
         this->close();
-        secwnd->show();
+        second_window->show();
     }
     else
     {
-        // Сообение о том, что вход не удался, нужно зарегестрироваться
-        QString temp = "Пользователя ";
-        temp += new_user;
-        temp += " не существует! Пожалуйста, зарегистрируйтесь.";
-        QMessageBox::information(this, "Неудачная попытка входа", temp);
+        // Сообщение о том, что вход не удался, нужно зарегистрироваться
+        QString temp = "Неправильный логин или пароль!";
+        QMessageBox::information(this, "Ошибка авторизации!", temp);
     }
 }
 
 // Кнопка зарегистрироваться
-void IUGram::on_pushButton_2_clicked()
+void IUGram::on_pushButton_3_clicked()
 {
-    // Получение списка зарегестрированных юзеров (необходимо допилить)
-    list_of_users.push_back("Alex");
-    list_of_users.push_back("Sasha");
-
-    new_user = ui->lineEdit->text();
-
-    if (qFind(list_of_users.begin(), list_of_users.end(), new_user) != list_of_users.end())
+    // Получение списка зерегистрированных пользователей (TODO: get() запросы)
+//    manager = new QNetworkAccessManager();  // Инициализация менеджера
+//    QUrl url("http://www...");              // Инициализация URL, с которого будут получаться данные
+//    QNetworkRequest request;                // Отправляемый запрос
+//    request.setUrl(url);                    // Устанавлвиваем URL в запрос
+//    manager->get(request);                  // Выполняем запрос
+//    QNetworkReply *reply;
+//    QString temp_list_of_users;
+//    temp_list_of_users.push_back(reply->readAll());
+    QVector<QPair<QString, QString>> local_users;
+    local_users.push_back(QPair<QString, QString>("S228H1488", "Sasha"));
+    local_users.push_back(QPair<QString, QString>("AK777", "AKosoj"));
+    for (auto it : local_users)
     {
-        // Сообение о том, что регистрация не удался, так как пользователь с таким username-ом уже существует
-        QString temp = "Пользователь с username: ";
-        temp += new_user;
-        temp += " уже существует! Пожалуйста, придумайте другое имя.";
-        QMessageBox::information(this, "Неудачная попытка регистрации", temp);
+        list_of_users.push_back(qMakePair(it.first,it.second));
+    }
+
+    // Считывание пароля нового user-а
+    new_user_pass = ui->lineEdit->text();
+    // Считывание логина нового user-а
+    new_user_log = ui->lineEdit_2->text();
+
+    // Если существует зарегистрированный пользователь с таким же логином
+    for (auto it : list_of_users)
+    {
+        if (it.second == new_user_log)
+        {
+            bad_log = true;
+        }
+    }
+    if (bad_log)
+    {
+        // Сообщение о том, что регистрация не удалась, потому что существует пользователь с таким логином
+        QString temp = "Данный логин уже зпрегистрирован! Пожалуйста, придумайте другой логин.";
+        QMessageBox::information(this, "Ошибка регистрации!", temp);
+        bad_log = false;
         return;
     }
 
-    // Добавляем новогоюзера
-    list_of_users.push_back(new_user);
+    // Если одно из полей логин или пароль не заполнено
+    if (new_user_log == "" || new_user_pass == "")
+    {
+        // Сообщение о том, что регистрация не удалась, потому что нельзя оставлять поля логин или пароль пустыми
+        QString temp = "Оба поля (логин и пароль) должны быть заполнены!";
+        QMessageBox::information(this, "Ошибка регистрации!", temp);
+        return;
+    }
+
+    // Если регистрация прошла успешно, то добавляем логин и пароль нового user-а в список (TODO post() запросы)
+    list_of_users.push_back(qMakePair(new_user_pass,new_user_log));
     // Создание второго окна со списком сообщений
-    SecondWindow * secwnd = new SecondWindow(this);
-    QBrush br(Qt::TexturePattern);
-    br.setTextureImage(QImage("/storage/emulated/0/DCIM/Camera/secondwindow.png"));
-    QPalette plt = secwnd->palette();
-    plt.setBrush(QPalette::Background, br);
-    secwnd->setPalette(plt);
+    SecondWindow * second_window = new SecondWindow(this);
     this->close();
-    secwnd->show();
+    second_window->show();
 }
 
-// Кнопка настройки - шестеренка
-void IUGram::on_pushButton_3_clicked()
+// Нажатие на кнопку ввод/enter на клавиатуре при нахождении курсора в поле с логином
+void IUGram::on_lineEdit_2_returnPressed()
 {
-    Settings * settingswindow = new Settings(this);
-    QBrush br(Qt::TexturePattern);
-    br.setTextureImage(QImage("/storage/emulated/0/DCIM/Camera/settingswindow.png"));
-    QPalette plt = settingswindow->palette();
-    plt.setBrush(QPalette::Background, br);
-    settingswindow->setPalette(plt);
-    this->close();
-    settingswindow->show();
+    on_pushButton_2_clicked();
+}
+
+// Нажатие на кнопку ввод/enter на клавиатуре при нахождении курсора в поле с паролем
+void IUGram::on_lineEdit_returnPressed()
+{
+    on_pushButton_2_clicked();
 }

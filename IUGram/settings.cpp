@@ -14,22 +14,17 @@ Settings::~Settings()
     delete ui;
 }
 
-// Кнопка назад - выход на главную из настроек
-void Settings::on_pushButton_2_clicked()
-{
-    IUGram * firstwindow_ = new IUGram(this);
-    QBrush br(Qt::TexturePattern);
-    br.setTextureImage(QImage("/storage/emulated/0/DCIM/Camera/firstwindow.png"));
-    QPalette plt = firstwindow_->palette();
-    plt.setBrush(QPalette::Background, br);
-    firstwindow_->setPalette(plt);
-    this->close();
-    firstwindow_->show();
-}
-
-// Кнока сохранить - сохраняет введенные хост и порт
+// Кнопка назад, которая ведет на страницу входа
 void Settings::on_pushButton_clicked()
 {
-    ip_addres = ui->lineEdit->text();
+    IUGram * first_window = new IUGram(this);
+    this->close();
+    first_window->show();
+}
+
+// Кнопка сохранить настройки для хоста и порта
+void Settings::on_pushButton_2_clicked()
+{
+    ip_address = ui->lineEdit->text();
     port = ui->lineEdit_2->text();
 }
