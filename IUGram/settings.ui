@@ -13,14 +13,17 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(://images/settingswindow.png);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>280</y>
-      <width>591</width>
-      <height>51</height>
+      <x>40</x>
+      <y>290</y>
+      <width>641</width>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -32,8 +35,15 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="echoMode">
-        <enum>QLineEdit::PasswordEchoOnEdit</enum>
+       <property name="font">
+        <font>
+         <family>Calibri Light</family>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(://images/firstwindow_input_field.png);
+border: rgb(255, 255, 255)</string>
        </property>
       </widget>
      </item>
@@ -42,9 +52,9 @@
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>40</x>
       <y>540</y>
-      <width>591</width>
+      <width>641</width>
       <height>41</height>
      </rect>
     </property>
@@ -57,8 +67,15 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="echoMode">
-        <enum>QLineEdit::PasswordEchoOnEdit</enum>
+       <property name="font">
+        <font>
+         <family>Calibri Light</family>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(://images/firstwindow_input_field.png);
+border: rgb(255, 255, 255)</string>
        </property>
       </widget>
      </item>
@@ -67,10 +84,10 @@
    <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>640</y>
-      <width>241</width>
-      <height>80</height>
+      <x>10</x>
+      <y>70</y>
+      <width>91</width>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -82,19 +99,12 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="font">
-        <font>
-         <family>Calibri Light</family>
-         <pointsize>10</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
        <property name="styleSheet">
-        <string notr="true">background: rgba(255, 255, 255, 0)</string>
+        <string notr="true">background-image: url(://images/settingswindow_back_button.png);
+border: rgb(172, 255, 254);</string>
        </property>
        <property name="text">
-        <string>Сохранить</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -103,10 +113,10 @@
    <widget class="QWidget" name="verticalLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>111</width>
-      <height>41</height>
+      <x>430</x>
+      <y>660</y>
+      <width>241</width>
+      <height>51</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -118,11 +128,55 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>58</red>
+             <green>86</green>
+             <blue>43</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>58</red>
+             <green>86</green>
+             <blue>43</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>120</red>
+             <green>120</green>
+             <blue>120</blue>
+            </color>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="font">
+        <font>
+         <family>Calibri Light</family>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background: rgba(255, 255, 255, 0)</string>
+        <string notr="true">background-image: url(://images/settingswindow_save_button.png);
+border: rgb(140, 254, 172);</string>
        </property>
        <property name="text">
-        <string/>
+        <string>Сохранить</string>
        </property>
       </widget>
      </item>
@@ -135,7 +189,7 @@
      <x>0</x>
      <y>0</y>
      <width>720</width>
-     <height>20</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>
